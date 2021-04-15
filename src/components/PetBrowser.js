@@ -1,10 +1,10 @@
 import React from 'react'
-
+// eslint-disable-next-line
 import Pet from './Pet'
 
 class PetBrowser extends React.Component {
   render() {
-    return <div className="ui cards">PET COMPONENT SHOULD GO HERE</div>
+    return this.props.pets.map((pet) => <div className="ui cards" id={pet.id}><Pet pet={pet} onAdoptPet={this.props.onAdoptPet}/></div>)
   }
 }
 
